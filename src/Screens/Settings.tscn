@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://src/Screens/CheckMusic.gd" type="Script" id=1]
+[ext_resource path="res://assets/user interface/FlatUI/kenneyUI-blue.tres" type="Theme" id=2]
+[ext_resource path="res://src/Screens/Settings.gd" type="Script" id=3]
+[ext_resource path="res://src/UserInterface/PlayButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Screens/CheckEffects.gd" type="Script" id=5]
+[ext_resource path="res://assets/user interface/Font/FantasticParty.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/templates/Base pack/bg_menu.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=4]
+size = 100
+font_data = ExtResource( 6 )
+
+[node name="Settings" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.0
+margin_right = -1.0
+theme = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="Title" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+custom_colors/default_color = Color( 1, 0.796078, 0, 1 )
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_enabled = true
+bbcode_text = "[wave][center]IMPOSTAZIONI[/center][/wave]"
+text = "IMPOSTAZIONI"
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -40.5
+margin_top = -55.0
+margin_right = 40.5
+margin_bottom = 55.0
+rect_scale = Vector2( 1.09216, 1.33953 )
+
+[node name="CheckMusic" type="CheckButton" parent="Menu"]
+margin_right = 105.324
+margin_bottom = 60.251
+pressed = true
+text = "MUSICA"
+align = 1
+script = ExtResource( 1 )
+
+[node name="CheckEffects" type="CheckButton" parent="Menu"]
+margin_top = 64.0
+margin_right = 105.0
+margin_bottom = 124.251
+pressed = true
+text = "EFFETTI"
+align = 1
+script = ExtResource( 5 )
+
+[node name="BackButton" parent="Menu" instance=ExtResource( 4 )]
+margin_top = 128.0
+margin_right = 105.0
+margin_bottom = 174.251
+text = "INDIETRO"
+next_scene_path = "res://src/Screens/MainScreen.tscn"
+
+[connection signal="button_up" from="Menu/CheckMusic" to="Menu/CheckMusic" method="_on_button_up"]
+[connection signal="button_up" from="Menu/CheckEffects" to="Menu/CheckEffects" method="_on_button_up"]

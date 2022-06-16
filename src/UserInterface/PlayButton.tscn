@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/UserInterface/PlayButton.gd" type="Script" id=1]
+[ext_resource path="res://assets/user interface/Font/FantasticParty.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 2 )
+
+[node name="PlayButton" type="Button"]
+margin_right = 96.0
+margin_bottom = 42.251
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 1 )
+text = "GIOCA"
+script = ExtResource( 1 )
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
