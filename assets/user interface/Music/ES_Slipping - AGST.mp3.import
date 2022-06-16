@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ES_Slipping - AGST.mp3-a052ec50d0a28df0036d13556f43b227.mp3str"
+
+[deps]
+
+source_file="res://assets/user interface/Music/ES_Slipping - AGST.mp3"
+dest_files=[ "res://.import/ES_Slipping - AGST.mp3-a052ec50d0a28df0036d13556f43b227.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

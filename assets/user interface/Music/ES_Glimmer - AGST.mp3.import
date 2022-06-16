@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ES_Glimmer - AGST.mp3-ed9d664c1c07617f3296e63b159c2850.mp3str"
+
+[deps]
+
+source_file="res://assets/user interface/Music/ES_Glimmer - AGST.mp3"
+dest_files=[ "res://.import/ES_Glimmer - AGST.mp3-ed9d664c1c07617f3296e63b159c2850.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
