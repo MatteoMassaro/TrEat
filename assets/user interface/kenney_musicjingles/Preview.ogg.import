@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Preview.ogg-5d9abae6d50074e77b394dcd2dac68e2.oggstr"
+
+[deps]
+
+source_file="res://assets/user interface/kenney_musicjingles/Preview.ogg"
+dest_files=[ "res://.import/Preview.ogg-5d9abae6d50074e77b394dcd2dac68e2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
