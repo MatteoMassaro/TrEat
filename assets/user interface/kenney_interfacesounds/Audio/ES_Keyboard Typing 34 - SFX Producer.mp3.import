@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ES_Keyboard Typing 34 - SFX Producer.mp3-2ef24ff7f62ccae9666e9aa420928015.mp3str"
+
+[deps]
+
+source_file="res://assets/user interface/kenney_interfacesounds/Audio/ES_Keyboard Typing 34 - SFX Producer.mp3"
+dest_files=[ "res://.import/ES_Keyboard Typing 34 - SFX Producer.mp3-2ef24ff7f62ccae9666e9aa420928015.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
