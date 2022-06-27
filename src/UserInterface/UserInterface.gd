@@ -6,8 +6,10 @@ onready var score: Label = get_node("Score")
 onready var health: Label = get_node("Health")
 onready var health_bar: ProgressBar = get_node("HealthBar")
 onready var pause_title: RichTextLabel = get_node("PauseOverlay/PauseTitle")
-onready var check_music: CheckButton = get_node("PauseOverlay/HBoxContainer/VBoxContainer/CheckMusic")
-onready var check_effects: CheckButton = get_node("PauseOverlay/HBoxContainer/VBoxContainer/CheckEffects")
+onready var pause_menu: HBoxContainer = get_node("PauseOverlay/HBoxContainer")
+onready var commands_menu: Control = get_node("PauseOverlay/Commands")
+onready var check_music: CheckButton = get_node("PauseOverlay/HBoxContainer/VBoxContainer/CheckMusicButton")
+onready var check_effects: CheckButton = get_node("PauseOverlay/HBoxContainer/VBoxContainer/CheckEffectsButton")
 
 const DIED_MESSAGE: = "GAME OVER"
 
@@ -58,7 +60,7 @@ func update_interface():
 		health_bar.get("custom_styles/fg").bg_color = Color(0, 255, 0)
 
 
-func on_game_resumed():
+func on_game_resumed(): 
 	pause_counter -= 1
 	self.paused = not paused
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -85,3 +87,13 @@ func set_paused(value: bool):
 	paused = value
 	scene_tree.paused = value
 	pause_overlay.visible = value
+
+
+func _on_CommandsButton_button_up():
+	pause_menu.visible = false
+	commands_menu.visible = true
+
+
+func _on_BackButton_button_up():
+	pause_menu.visible = true
+	commands_menu.visible = false

@@ -9,3 +9,8 @@ var level1Path = "res://src/Levels/Level1.tscn"
 var level2Path = "res://src/Levels/Level2.tscn"
 var level3Path = ""
 var level4Path = ""
+
+var starsLevel1 = 0
+var starsLevel2 = 0
+var starsLevel3 = 0
+var starsLevel4 = 0

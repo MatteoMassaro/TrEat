@@ -207,7 +207,7 @@ collision_layer = 4
 script = ExtResource( 2 )
 
 [node name="Fruit" type="Sprite" parent="."]
-position = Vector2( 0, 10 )
+position = Vector2( 0, -7.00515 )
 scale = Vector2( 0.116211, 0.116211 )
 texture = ExtResource( 1 )
 

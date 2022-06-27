@@ -20,10 +20,10 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 19.5, 32.5 )
+extents = Vector2( 20.5, 31.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 21.5, 30.5 )
+extents = Vector2( 22.5, 33.5 )
 
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 8
@@ -37,7 +37,7 @@ animation = "run"
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.5, 5.5 )
+position = Vector2( -0.5, 4.5 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -47,11 +47,12 @@ limit_left = 0
 
 [node name="EnemyDetector" type="Area2D" parent="."]
 modulate = Color( 0, 1, 0.0156863, 1 )
+position = Vector2( 0, 36 )
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
-position = Vector2( 0.5, 6.5 )
+position = Vector2( -0.5, -32 )
 shape = SubResource( 2 )
 
 [connection signal="area_entered" from="EnemyDetector" to="." method="_on_EnemyDetector_area_entered"]

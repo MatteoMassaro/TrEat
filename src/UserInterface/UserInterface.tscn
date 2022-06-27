@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/user interface/Font/FantasticParty.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/user interface/PNG/arrow.png" type="Texture" id=2]
 [ext_resource path="res://src/UserInterface/PlayButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/user interface/FlatUI/kenneyUI-blue.tres" type="Theme" id=4]
 [ext_resource path="res://src/UserInterface/RetryButton.tscn" type="PackedScene" id=5]
@@ -8,8 +9,11 @@
 [ext_resource path="res://assets/user interface/Font/NineTsukiRegular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://src/UserInterface/ResumeButton.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/UserInterface/MenuButton.gd" type="Script" id=9]
-[ext_resource path="res://src/Screens/CheckMusic.gd" type="Script" id=10]
-[ext_resource path="res://src/Screens/CheckEffects.gd" type="Script" id=11]
+[ext_resource path="res://src/UserInterface/CheckEffectsButton.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/user interface/PNG/letter-d.png" type="Texture" id=12]
+[ext_resource path="res://assets/user interface/PNG/letter-w.png" type="Texture" id=13]
+[ext_resource path="res://assets/user interface/PNG/letter-a.png" type="Texture" id=14]
+[ext_resource path="res://src/UserInterface/CheckMusicButton.tscn" type="PackedScene" id=15]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -39,6 +43,14 @@ expand_margin_bottom = 1.0
 
 [sub_resource type="DynamicFont" id=2]
 size = 150
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 50
 font_data = ExtResource( 1 )
 
 [node name="UserInterface" type="Control"]
@@ -124,15 +136,24 @@ margin_bottom = 260.0
 
 [node name="ResumeButton" parent="PauseOverlay/HBoxContainer/PauseMenu" instance=ExtResource( 8 )]
 margin_right = 139.0
-margin_bottom = 84.0
+margin_bottom = 62.0
 
 [node name="RetryButton" parent="PauseOverlay/HBoxContainer/PauseMenu" instance=ExtResource( 5 )]
-margin_top = 88.0
+margin_top = 66.0
 margin_right = 139.0
-margin_bottom = 172.0
+margin_bottom = 128.0
+
+[node name="CommandsButton" type="Button" parent="PauseOverlay/HBoxContainer/PauseMenu"]
+margin_top = 132.0
+margin_right = 139.0
+margin_bottom = 194.0
+size_flags_vertical = 3
+theme = ExtResource( 4 )
+custom_fonts/font = SubResource( 5 )
+text = "COMANDI"
 
 [node name="MenuButton" parent="PauseOverlay/HBoxContainer/PauseMenu" instance=ExtResource( 3 )]
-margin_top = 176.0
+margin_top = 198.0
 margin_right = 139.324
 margin_bottom = 260.0
 text = "MENU PRINCIPALE"
@@ -145,24 +166,214 @@ margin_right = 248.0
 margin_bottom = 260.0
 alignment = 1
 
-[node name="CheckMusic" type="CheckButton" parent="PauseOverlay/HBoxContainer/VBoxContainer"]
-margin_right = 105.324
+[node name="CheckMusicButton" parent="PauseOverlay/HBoxContainer/VBoxContainer" instance=ExtResource( 15 )]
 margin_bottom = 128.0
 size_flags_vertical = 3
-pressed = true
-text = "MUSICA"
-align = 1
-script = ExtResource( 10 )
 
-[node name="CheckEffects" type="CheckButton" parent="PauseOverlay/HBoxContainer/VBoxContainer"]
+[node name="CheckEffectsButton" parent="PauseOverlay/HBoxContainer/VBoxContainer" instance=ExtResource( 10 )]
 margin_top = 132.0
-margin_right = 105.0
 margin_bottom = 260.0
 size_flags_vertical = 3
-pressed = true
-text = "EFFETTI"
-align = 1
-script = ExtResource( 11 )
 
-[connection signal="button_up" from="PauseOverlay/HBoxContainer/VBoxContainer/CheckMusic" to="PauseOverlay/HBoxContainer/VBoxContainer/CheckMusic" method="_on_button_up"]
-[connection signal="button_up" from="PauseOverlay/HBoxContainer/VBoxContainer/CheckEffects" to="PauseOverlay/HBoxContainer/VBoxContainer/CheckEffects" method="_on_button_up"]
+[node name="Commands" type="Control" parent="PauseOverlay"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -513.0
+margin_top = -300.0
+margin_right = -473.0
+margin_bottom = -260.0
+
+[node name="MoveForward" type="RichTextLabel" parent="PauseOverlay/Commands"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -93.0
+margin_top = 195.0
+margin_right = 931.0
+margin_bottom = 795.0
+theme = ExtResource( 4 )
+custom_colors/default_color = Color( 0.207843, 0.729412, 0.952941, 1 )
+custom_fonts/normal_font = SubResource( 6 )
+bbcode_enabled = true
+bbcode_text = "[center]Muovi in avanti[/center]"
+text = "Muovi in avanti"
+
+[node name="Or" type="RichTextLabel" parent="PauseOverlay/Commands"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 127.0
+margin_top = 195.0
+margin_right = 1151.0
+margin_bottom = 795.0
+theme = ExtResource( 4 )
+custom_colors/default_color = Color( 0.207843, 0.729412, 0.952941, 1 )
+custom_fonts/normal_font = SubResource( 6 )
+bbcode_enabled = true
+bbcode_text = "[center]o[/center]"
+text = "o"
+
+[node name="Or2" type="RichTextLabel" parent="PauseOverlay/Commands"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 127.0
+margin_top = 275.0
+margin_right = 1151.0
+margin_bottom = 875.0
+theme = ExtResource( 4 )
+custom_colors/default_color = Color( 0.207843, 0.729412, 0.952941, 1 )
+custom_fonts/normal_font = SubResource( 6 )
+bbcode_enabled = true
+bbcode_text = "[center]o[/center]"
+text = "o"
+
+[node name="Or3" type="RichTextLabel" parent="PauseOverlay/Commands"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 127.0
+margin_top = 355.0
+margin_right = 1151.0
+margin_bottom = 955.0
+theme = ExtResource( 4 )
+custom_colors/default_color = Color( 0.207843, 0.729412, 0.952941, 1 )
+custom_fonts/normal_font = SubResource( 6 )
+bbcode_enabled = true
+bbcode_text = "[center]o[/center]"
+text = "o"
+
+[node name="MoveBackward" type="RichTextLabel" parent="PauseOverlay/Commands"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -95.0
+margin_top = 275.0
+margin_right = 929.0
+margin_bottom = 875.0
+theme = ExtResource( 4 )
+custom_colors/default_color = Color( 0.207843, 0.729412, 0.952941, 1 )
+custom_fonts/normal_font = SubResource( 6 )
+bbcode_enabled = true
+bbcode_text = "[center]Muovi indietro[/center]"
+text = "Muovi indietro"
+
+[node name="Jump" type="RichTextLabel" parent="PauseOverlay/Commands"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -104.0
+margin_top = 355.0
+margin_right = 920.0
+margin_bottom = 955.0
+theme = ExtResource( 4 )
+custom_colors/default_color = Color( 0.207843, 0.729412, 0.952941, 1 )
+custom_fonts/normal_font = SubResource( 6 )
+bbcode_enabled = true
+bbcode_text = "[center]Salta[/center]"
+text = "Salta"
+
+[node name="AKey" type="TextureRect" parent="PauseOverlay/Commands"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 569.0
+margin_top = 200.0
+margin_right = 617.0
+margin_bottom = 248.0
+texture = ExtResource( 14 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="RIghtArrow" type="TextureRect" parent="PauseOverlay/Commands"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 660.0
+margin_top = 200.0
+margin_right = 711.0
+margin_bottom = 251.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="DKey" type="TextureRect" parent="PauseOverlay/Commands"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 569.0
+margin_top = 280.0
+margin_right = 617.0
+margin_bottom = 328.0
+texture = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="LeftArrow" type="TextureRect" parent="PauseOverlay/Commands"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 712.0
+margin_top = 330.0
+margin_right = 763.0
+margin_bottom = 381.0
+rect_rotation = -180.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="WKey2" type="TextureRect" parent="PauseOverlay/Commands"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 569.0
+margin_top = 360.0
+margin_right = 617.0
+margin_bottom = 408.0
+texture = ExtResource( 13 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="LeftArrow2" type="TextureRect" parent="PauseOverlay/Commands"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 660.0
+margin_top = 410.0
+margin_right = 711.0
+margin_bottom = 461.0
+rect_rotation = -90.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="BackButton" type="Button" parent="PauseOverlay/Commands"]
+margin_left = 452.0
+margin_top = 474.0
+margin_right = 591.0
+margin_bottom = 536.0
+size_flags_vertical = 3
+theme = ExtResource( 4 )
+custom_fonts/font = SubResource( 5 )
+text = "INDIETRO"
+
+[connection signal="button_up" from="PauseOverlay/HBoxContainer/PauseMenu/CommandsButton" to="." method="_on_CommandsButton_button_up"]
+[connection signal="button_up" from="PauseOverlay/Commands/BackButton" to="." method="_on_BackButton_button_up"]

@@ -1,7 +1,7 @@
 extends Control
 
-onready var check_music: CheckButton = get_node("Menu/CheckMusic")
-onready var check_effects: CheckButton = get_node("Menu/CheckEffects")
+onready var check_music: CheckButton = get_node("Menu/CheckMusicButton")
+onready var check_effects: CheckButton = get_node("Menu/CheckEffectsButton")
 
 
 
@@ -14,3 +14,4 @@ func _ready():
 		check_effects.pressed = true
 	elif TrackPlayer.is_playing_effects == false:
 		check_effects.pressed = false
+

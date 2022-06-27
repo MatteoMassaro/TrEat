@@ -74,3 +74,4 @@ func _on_body_entered(body):
 
 func _on_body_exited(body):
 	dialog_rect.visible = false
+	TrackPlayer.stop_effect()

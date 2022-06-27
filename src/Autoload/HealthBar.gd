@@ -13,4 +13,4 @@ func food_picked():
 
 func enemy_collided():
 	enemy_counter += 1
-	emit_signal("enemy_collided") 
+	emit_signal("enemy_collided")

@@ -1,14 +1,14 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/Actors/EnemiesFirstLevel.gd" type="Script" id=1]
 [ext_resource path="res://assets/food/sugar.png" type="Texture" id=2]
 [ext_resource path="res://assets/user interface/Font/NineTsukiRegular.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 22, 25 )
+extents = Vector2( 22, 24 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 21, 3 )
+extents = Vector2( 25, 4.5 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 25
@@ -124,6 +124,9 @@ tracks/2/keys = {
 } ]
 }
 
+[sub_resource type="Animation" id=14]
+length = 0.001
+
 [sub_resource type="Animation" id=5]
 resource_name = "points_fade"
 length = 0.1
@@ -182,9 +185,21 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( -20, -11.5 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=7]
-resource_name = "fade_out 2"
+resource_name = "fade_out2"
 length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("Label:modulate")
@@ -223,7 +238,7 @@ scale = Vector2( 0.116504, 0.116504 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 3 )
+position = Vector2( 0, 4 )
 shape = SubResource( 1 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
@@ -235,14 +250,15 @@ physics_process_parent = true
 
 [node name="StompDetector" type="Area2D" parent="."]
 modulate = Color( 0, 0.203922, 1, 1 )
-position = Vector2( 0, -32 )
+position = Vector2( 0, -20 )
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetector"]
-position = Vector2( 0, 7 )
+position = Vector2( 0, -4 )
 shape = SubResource( 2 )
 
 [node name="Label" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -264,11 +280,12 @@ anims/fade_out = SubResource( 10 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 autoplay = "points_fade"
+anims/RESET = SubResource( 14 )
 anims/points_fade = SubResource( 5 )
 anims/points_up = SubResource( 6 )
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 13 )
-"anims/fade_out 2" = SubResource( 7 )
+anims/fade_out2 = SubResource( 7 )
 
 [connection signal="body_entered" from="StompDetector" to="." method="_on_StompDetector_body_entered"]

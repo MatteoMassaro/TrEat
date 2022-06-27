@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Screens/CheckMusic.gd" type="Script" id=1]
+
+[node name="CheckMusicButton" type="CheckButton"]
+margin_right = 105.324
+margin_bottom = 60.251
+pressed = true
+text = "MUSICA"
+align = 1
+script = ExtResource( 1 )
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]

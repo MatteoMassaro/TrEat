@@ -5,10 +5,10 @@
 [ext_resource path="res://assets/user interface/Font/NineTsukiRegular.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 28.5, 25.5 )
+extents = Vector2( 28.5, 24.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 29.5, 3 )
+extents = Vector2( 31.5, 5.25 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 25
@@ -184,7 +184,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=7]
-resource_name = "fade_out 2"
+resource_name = "fade_out2"
 length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("Label:modulate")
@@ -223,7 +223,7 @@ scale = Vector2( 0.116504, 0.116504 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.5, 3.5 )
+position = Vector2( 0.5, 4.5 )
 shape = SubResource( 1 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
@@ -235,14 +235,15 @@ physics_process_parent = true
 
 [node name="StompDetector" type="Area2D" parent="."]
 modulate = Color( 0, 0.203922, 1, 1 )
-position = Vector2( 0, -32 )
+position = Vector2( 0, -20 )
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetector"]
-position = Vector2( 0.5, 7 )
+position = Vector2( 0.5, -4.75 )
 shape = SubResource( 2 )
 
 [node name="Label" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -269,6 +270,6 @@ anims/points_up = SubResource( 6 )
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 13 )
-"anims/fade_out 2" = SubResource( 7 )
+anims/fade_out2 = SubResource( 7 )
 
 [connection signal="body_entered" from="StompDetector" to="." method="_on_StompDetector_body_entered"]

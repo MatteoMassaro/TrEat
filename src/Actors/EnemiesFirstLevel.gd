@@ -34,5 +34,5 @@ func die():
 		TrackPlayer.effect_track = load("res://assets/user interface/kenney_interfacesounds/Audio/minimize_008.ogg")
 		TrackPlayer.play_effect()
 	flag = 1
-	anim_player3.play("fade_out 2")
+	anim_player3.play("fade_out2")
 	PlayerData.score += score

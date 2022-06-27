@@ -47,10 +47,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -65.5
-margin_top = -48.0001
-margin_right = 65.5
-margin_bottom = 48.0001
+margin_left = -65.0
+margin_top = -79.0
+margin_right = 66.0
+margin_bottom = 167.0
 rect_scale = Vector2( 1.09216, 1.33953 )
 
 [node name="PlayButton" parent="Menu" instance=ExtResource( 4 )]
@@ -65,15 +65,22 @@ margin_bottom = 96.251
 text = "IMPOSTAZIONI"
 next_scene_path = "res://src/Screens/Settings.tscn"
 
-[node name="CreditsButton" parent="Menu" instance=ExtResource( 4 )]
+[node name="CommandsButton" parent="Menu" instance=ExtResource( 4 )]
 margin_top = 100.0
 margin_right = 131.0
 margin_bottom = 146.251
+text = "COMANDI"
+next_scene_path = "res://src/Screens/Commands.tscn"
+
+[node name="CreditsButton" parent="Menu" instance=ExtResource( 4 )]
+margin_top = 150.0
+margin_right = 131.0
+margin_bottom = 196.251
 text = "CREDITI"
 next_scene_path = "res://src/Screens/Credits.tscn"
 
 [node name="ExitButton" parent="Menu" instance=ExtResource( 5 )]
-margin_top = 150.0
+margin_top = 200.0
 margin_right = 131.0
-margin_bottom = 196.251
+margin_bottom = 246.251
 custom_fonts/font = SubResource( 1 )
