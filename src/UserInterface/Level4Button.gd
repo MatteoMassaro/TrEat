@@ -6,6 +6,9 @@ export(String, FILE) var next_scene_path: = ""
 
 
 func _on_button_up():
+	LevelData.level1 = false
+	LevelData.level2 = false
+	LevelData.level3 = false
 	LevelData.level4 = true
 	HealthBar.enemy_counter = 0
 	if TrackPlayer.flagEffects == 0:

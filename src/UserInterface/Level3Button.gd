@@ -6,7 +6,10 @@ export(String, FILE) var next_scene_path: = ""
 
 
 func _on_button_up():
+	LevelData.level1 = false
+	LevelData.level2 = false
 	LevelData.level3 = true
+	LevelData.level4 = false
 	HealthBar.enemy_counter = 0
 	if TrackPlayer.flagEffects == 0:
 		TrackPlayer.effect_track = load("res://assets/user interface/Bonus/click1.ogg")

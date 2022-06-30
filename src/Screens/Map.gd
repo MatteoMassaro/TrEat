@@ -28,6 +28,9 @@ onready var Star3Level4Empty: TextureRect = get_node("CanvasLayer/Star3Level4Emp
 
 
 func _ready():
+	TrackPlayer.music_track = load ("res://assets/user interface/Music/ES_Glimmer - AGST.mp3")
+	if TrackPlayer.flagMusic == 0 && TrackPlayer.is_playing_music == false:
+		TrackPlayer.play_music()
 	if LevelData.starsLevel1 == 0:
 		Star1Level1Empty.visible = true
 		Star2Level1Empty.visible = true

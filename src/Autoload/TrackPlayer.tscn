@@ -11,5 +11,11 @@ volume_db = -5.0
 [node name="Effects" type="AudioStreamPlayer" parent="."]
 volume_db = 2.0
 
+[node name="Objects" type="AudioStreamPlayer" parent="."]
+volume_db = 2.0
+
+[node name="Enemies" type="AudioStreamPlayer" parent="."]
+volume_db = 2.0
+
 [node name="Steps" type="AudioStreamPlayer" parent="."]
 volume_db = -5.0

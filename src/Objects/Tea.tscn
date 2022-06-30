@@ -1,23 +1,21 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://src/Actors/Enemies.gd" type="Script" id=1]
-[ext_resource path="res://assets/food/soft-drinks.png" type="Texture" id=2]
-[ext_resource path="res://assets/user interface/Font/NineTsukiRegular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/user interface/Font/NineTsukiRegular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://src/Objects/Food.gd" type="Script" id=2]
+[ext_resource path="res://assets/user interface/kenney_interfacesounds/Audio/maximize_007.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/food/tea.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 27.5, 25.5 )
+extents = Vector2( 30, 24 )
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 31.5, 5.625 )
-
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 size = 25
-font_data = ExtResource( 3 )
+font_data = ExtResource( 1 )
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=10]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("enemy:modulate")
+tracks/0/path = NodePath("Tea:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -28,8 +26,25 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
+
+[sub_resource type="Animation" id=2]
+resource_name = "bouncing"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Tea:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 0.5, 1.51572 ),
+"update": 0,
+"values": [ Vector2( 0, 10 ), Vector2( 0, -10 ) ]
+}
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:speed")
+tracks/1/path = NodePath(".:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -38,10 +53,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 300, 1000 ) ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("VisibilityEnabler2D:visible")
+tracks/2/path = NodePath("Tea:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -50,41 +65,14 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ true ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("VisibilityEnabler2D:pause_mode")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 1 ]
-}
-
-[sub_resource type="Animation" id=12]
-resource_name = "enemy_show"
-tracks/0/type = "value"
-tracks/0/path = NodePath("enemy:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=3]
 resource_name = "fade_out"
-length = 0.6
+length = 0.7
 tracks/0/type = "value"
-tracks/0/path = NodePath("enemy:modulate")
+tracks/0/path = NodePath("Tea:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -102,21 +90,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.6 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "queue_free"
-} ]
-}
-tracks/2/type = "method"
-tracks/2/path = NodePath("VisibilityEnabler2D")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
+"times": PoolRealArray( 0.7 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -124,7 +98,22 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=9]
 resource_name = "points_fade"
 length = 0.1
 tracks/0/type = "value"
@@ -140,7 +129,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 resource_name = "points_up"
 length = 0.6
 tracks/0/type = "value"
@@ -168,7 +157,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=11]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Label:rect_position")
@@ -183,8 +172,8 @@ tracks/0/keys = {
 "values": [ Vector2( -20, -11.5 ) ]
 }
 
-[sub_resource type="Animation" id=7]
-resource_name = "fade_out2"
+[sub_resource type="Animation" id=6]
+resource_name = "fade_out 2"
 length = 0.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("Label:modulate")
@@ -213,33 +202,17 @@ tracks/1/keys = {
 } ]
 }
 
-[node name="Enemy2" type="KinematicBody2D"]
-collision_layer = 2
-collision_mask = 9
-script = ExtResource( 1 )
+[node name="Tea" type="Area2D"]
+collision_layer = 4
+script = ExtResource( 2 )
 
-[node name="enemy" type="Sprite" parent="."]
-scale = Vector2( 0.116504, 0.116504 )
-texture = ExtResource( 2 )
+[node name="Tea" type="Sprite" parent="."]
+position = Vector2( 0, -7.00515 )
+scale = Vector2( 0.116211, 0.116211 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.5, 3.5 )
 shape = SubResource( 1 )
-
-[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
-pause_mode = 1
-rect = Rect2( -30, 30, 60, -60 )
-process_parent = true
-physics_process_parent = true
-
-[node name="StompDetector" type="Area2D" parent="."]
-modulate = Color( 0, 0.203922, 1, 1 )
-position = Vector2( 0, -22 )
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetector"]
-position = Vector2( 0.5, -5.375 )
-shape = SubResource( 2 )
 
 [node name="Label" type="Label" parent="."]
 modulate = Color( 1, 1, 1, 0 )
@@ -252,23 +225,28 @@ margin_top = -11.5
 margin_right = 20.0
 margin_bottom = 11.5
 custom_colors/font_color = Color( 1, 0.796078, 0, 1 )
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 text = "+100"
 align = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "enemy_show"
-anims/RESET = SubResource( 11 )
-anims/enemy_show = SubResource( 12 )
-anims/fade_out = SubResource( 10 )
+autoplay = "bouncing"
+anims/RESET = SubResource( 10 )
+anims/bouncing = SubResource( 2 )
+anims/fade_out = SubResource( 3 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 autoplay = "points_fade"
-anims/points_fade = SubResource( 5 )
-anims/points_up = SubResource( 6 )
+anims/RESET = SubResource( 8 )
+anims/points_fade = SubResource( 9 )
+anims/points_up = SubResource( 7 )
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 13 )
-anims/fade_out2 = SubResource( 7 )
+anims/RESET = SubResource( 11 )
+"anims/fade_out 2" = SubResource( 6 )
 
-[connection signal="body_entered" from="StompDetector" to="." method="_on_StompDetector_body_entered"]
+[node name="PickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -3.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/food/bread.png" type="Texture" id=1]
-[ext_resource path="res://src/Objects/FoodFirstLevel.gd" type="Script" id=2]
+[ext_resource path="res://src/Objects/Food.gd" type="Script" id=2]
 [ext_resource path="res://assets/user interface/Font/NineTsukiRegular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/user interface/kenney_interfacesounds/Audio/maximize_007.ogg" type="AudioStream" id=4]
 

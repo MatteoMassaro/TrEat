@@ -31,10 +31,10 @@ func _on_Timer_timeout():
 			get_tree().change_scene(next_scene_path)
 			queue_free()
 		elif LevelData.level3:
-			next_scene_path = LevelData.level1Path
+			next_scene_path = LevelData.level3Path
 			get_tree().change_scene(next_scene_path)
 			queue_free()
 		elif LevelData.level4:
-			next_scene_path = LevelData.level2Path
+			next_scene_path = LevelData.level4Path
 			get_tree().change_scene(next_scene_path)
 			queue_free()

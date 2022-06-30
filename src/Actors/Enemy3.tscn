@@ -1,14 +1,14 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://src/Actors/EnemiesFirstLevel.gd" type="Script" id=1]
+[ext_resource path="res://src/Actors/Enemies.gd" type="Script" id=1]
 [ext_resource path="res://assets/food/butter.png" type="Texture" id=2]
 [ext_resource path="res://assets/user interface/Font/NineTsukiRegular.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 28.5, 22.5 )
+extents = Vector2( 27, 23.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 32.5, 5.25 )
+extents = Vector2( 32.5, 5.625 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 25
@@ -223,23 +223,22 @@ scale = Vector2( 0.116504, 0.116504 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.5, 5.5 )
+position = Vector2( 0, 4.5 )
 shape = SubResource( 1 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
 pause_mode = 1
-position = Vector2( 0, 18 )
-rect = Rect2( -20, 10, 40, -55 )
+rect = Rect2( -30, 28, 60, -55 )
 process_parent = true
 physics_process_parent = true
 
 [node name="StompDetector" type="Area2D" parent="."]
 modulate = Color( 0, 0.203922, 1, 1 )
-position = Vector2( 0, -17 )
+position = Vector2( 0, -19 )
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetector"]
-position = Vector2( 0.5, -5 )
+position = Vector2( 0.5, -5.375 )
 shape = SubResource( 2 )
 
 [node name="Label" type="Label" parent="."]

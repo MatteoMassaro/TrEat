@@ -21,11 +21,11 @@ func _ready():
 	if HealthBar.enemy_counter < 3:
 		game_over_title.visible = false
 		level_completed_title.visible = true
-		yield(get_tree().create_timer(0.5),"timeout")
-		score.visible = true
 		if TrackPlayer.flagMusic == 0:
 			TrackPlayer.music_track = load("res://assets/user interface/Music/mixkit-game-level-completed-2059.wav")
 			TrackPlayer.play_music()
+		yield(get_tree().create_timer(0.5),"timeout")
+		score.visible = true
 		if PlayerData.score >= 8000:
 			anim_player.play("star1_show")
 			anim_player2.play("star2_show")
@@ -34,7 +34,18 @@ func _ready():
 			anim_player4.play("star1_pulse")
 			anim_player5.play("star2_pulse")
 			anim_player6.play("star3_pulse")
-			LevelData.starsLevel1 = 3
+			if LevelData.level1 == true && LevelData.highScorelevel1 < PlayerData.score:
+				LevelData.starsLevel1 = 3
+				LevelData.highScorelevel1 = PlayerData.score
+			elif LevelData.level2 == true && LevelData.highScorelevel2 < PlayerData.score:
+				LevelData.starsLevel2 = 3
+				LevelData.highScorelevel2 = PlayerData.score
+			elif LevelData.level3 == true && LevelData.highScorelevel3 < PlayerData.score:
+				LevelData.starsLevel3 = 3
+				LevelData.highScorelevel3 = PlayerData.score
+			elif LevelData.level4 == true && LevelData.highScorelevel4 < PlayerData.score:
+				LevelData.starsLevel4 = 3
+				LevelData.highScorelevel4 = PlayerData.score
 		elif PlayerData.score >= 5000:
 			anim_player.play("star1_show")
 			anim_player2.play("star2_show")
@@ -42,7 +53,18 @@ func _ready():
 			star3_empty.visible = true
 			anim_player4.play("star1_pulse")
 			anim_player5.play("star2_pulse")
-			LevelData.starsLevel1 = 2
+			if LevelData.level1 == true && LevelData.highScorelevel1 < PlayerData.score:
+				LevelData.starsLevel1 = 2
+				LevelData.highScorelevel1 = PlayerData.score
+			elif LevelData.level2 == true && LevelData.highScorelevel2 < PlayerData.score:
+				LevelData.starsLevel2 = 2
+				LevelData.highScorelevel2 = PlayerData.score
+			elif LevelData.level3 == true && LevelData.highScorelevel3 < PlayerData.score:
+				LevelData.starsLevel3 = 2
+				LevelData.highScorelevel3 = PlayerData.score
+			elif LevelData.level4 == true && LevelData.highScorelevel4 < PlayerData.score:
+				LevelData.starsLevel4 = 2
+				LevelData.highScorelevel4 = PlayerData.score
 		elif PlayerData.score > 0:
 			anim_player.play("star1_show")
 			yield(get_tree().create_timer(0.8),"timeout")
@@ -50,7 +72,18 @@ func _ready():
 			anim_player4.play("star1_pulse")
 			yield(get_tree().create_timer(0.3),"timeout")
 			star3_empty.visible = true
-			LevelData.starsLevel1 = 1
+			if LevelData.level1 == true && LevelData.highScorelevel1 < PlayerData.score:
+				LevelData.starsLevel1 = 1
+				LevelData.highScorelevel1 = PlayerData.score
+			elif LevelData.level2 == true && LevelData.highScorelevel2 < PlayerData.score:
+				LevelData.starsLevel2 = 1
+				LevelData.highScorelevel2 = PlayerData.score
+			elif LevelData.level3 == true && LevelData.highScorelevel3 < PlayerData.score:
+				LevelData.starsLevel3 = 1
+				LevelData.highScorelevel3 = PlayerData.score
+			elif LevelData.level4 == true && LevelData.highScorelevel4 < PlayerData.score:
+				LevelData.starsLevel4 = 1
+				LevelData.highScorelevel4 = PlayerData.score
 		elif PlayerData.score == 0:
 			yield(get_tree().create_timer(0.3),"timeout")
 			star1_empty.visible = true
@@ -58,7 +91,18 @@ func _ready():
 			star2_empty.visible = true
 			yield(get_tree().create_timer(0.3),"timeout")
 			star3_empty.visible = true
-			LevelData.starsLevel1 = 0
+			if LevelData.level1 == true && LevelData.highScorelevel1 < PlayerData.score:
+				LevelData.starsLevel1 = 0
+				LevelData.highScorelevel1 = PlayerData.score
+			elif LevelData.level2 == true && LevelData.highScorelevel2 < PlayerData.score:
+				LevelData.starsLevel2 = 0
+				LevelData.highScorelevel2 = PlayerData.score
+			elif LevelData.level3 == true && LevelData.highScorelevel3 < PlayerData.score:
+				LevelData.starsLevel3 = 0
+				LevelData.highScorelevel3 = PlayerData.score
+			elif LevelData.level4 == true && LevelData.highScorelevel4 < PlayerData.score:
+				LevelData.starsLevel4 = 0
+				LevelData.highScorelevel4 = PlayerData.score
 	else:
 		score.visible = false
 		text_lost.visible = true
@@ -68,3 +112,4 @@ func _ready():
 		star2_empty.visible = true
 		yield(get_tree().create_timer(0.3),"timeout")
 		star3_empty.visible = true
+	TrackPlayer.is_playing_music = false

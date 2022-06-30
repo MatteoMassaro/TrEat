@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://src/UserInterface/ExitButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/UserInterface/PlayButton.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/user interface/PNG/star.png" type="Texture" id=8]
 [ext_resource path="res://assets/user interface/PNG/star_empty.png" type="Texture" id=9]
 [ext_resource path="res://assets/templates/Base pack/bg_menu.png" type="Texture" id=10]
+[ext_resource path="res://src/UserInterface/RetryButton.gd" type="Script" id=11]
 
 [sub_resource type="DynamicFont" id=4]
 size = 150
@@ -738,20 +739,27 @@ rect_scale = Vector2( 1.09216, 1.33953 )
 margin_right = 139.0
 margin_bottom = 46.251
 text = "RICOMINCIA"
-next_scene_path = "res://src/Levels/Level1.tscn"
+script = ExtResource( 11 )
+
+[node name="MapButton" parent="Menu" instance=ExtResource( 2 )]
+margin_top = 50.0
+margin_right = 139.0
+margin_bottom = 96.251
+text = "MAPPA"
+next_scene_path = "res://src/Screens/Map.tscn"
 
 [node name="MenuButton" parent="Menu" instance=ExtResource( 2 )]
-margin_top = 50.0
+margin_top = 100.0
 margin_right = 139.324
-margin_bottom = 96.251
+margin_bottom = 146.251
 text = "MENU PRINCIPALE"
 script = ExtResource( 7 )
 next_scene_path = "res://src/Screens/MainScreen.tscn"
 
 [node name="ExitButton" parent="Menu" instance=ExtResource( 1 )]
-margin_top = 100.0
+margin_top = 150.0
 margin_right = 139.0
-margin_bottom = 146.251
+margin_bottom = 196.251
 
 [node name="Score" type="Label" parent="."]
 visible = false
@@ -809,32 +817,6 @@ margin_bottom = -11.7939
 texture = ExtResource( 9 )
 expand = true
 
-[node name="Star2Empty" type="TextureRect" parent="."]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -12.0
-margin_top = -55.0
-margin_right = 31.2061
-margin_bottom = -11.7939
-texture = ExtResource( 9 )
-expand = true
-
-[node name="Star3Empty" type="TextureRect" parent="."]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 63.0
-margin_top = -55.0
-margin_right = 106.206
-margin_bottom = -11.7939
-texture = ExtResource( 9 )
-expand = true
-
 [node name="Star2" type="TextureRect" parent="."]
 visible = false
 anchor_left = 0.5
@@ -848,6 +830,19 @@ margin_bottom = -9.0
 texture = ExtResource( 8 )
 expand = true
 
+[node name="Star2Empty" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -12.0
+margin_top = -55.0
+margin_right = 31.2061
+margin_bottom = -11.7939
+texture = ExtResource( 9 )
+expand = true
+
 [node name="Star3" type="TextureRect" parent="."]
 visible = false
 anchor_left = 0.5
@@ -859,6 +854,19 @@ margin_top = -55.0
 margin_right = 109.0
 margin_bottom = -9.0
 texture = ExtResource( 8 )
+expand = true
+
+[node name="Star3Empty" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 63.0
+margin_top = -55.0
+margin_right = 106.206
+margin_bottom = -11.7939
+texture = ExtResource( 9 )
 expand = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

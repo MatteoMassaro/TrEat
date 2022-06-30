@@ -35,6 +35,24 @@ func stop_effect():
 	$Effects.stop()
 
 
+func play_object_effect():
+	$Objects.stream = effect_track
+	$Objects.play()
+
+
+func stop_object_effect():
+	$Objects.stop()
+
+
+func play_enemie_effect():
+	$Enemies.stream = effect_track
+	$Enemies.play()
+
+
+func stop_enemie_effect():
+	$Enemies.stop()
+
+
 func play_steps():
 	$Steps.stream = steps_track
 	$Steps.play()

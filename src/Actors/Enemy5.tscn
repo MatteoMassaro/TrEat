@@ -1,14 +1,14 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/Actors/Enemies.gd" type="Script" id=1]
-[ext_resource path="res://assets/food/soft-drinks.png" type="Texture" id=2]
+[ext_resource path="res://assets/food/beer.png" type="Texture" id=2]
 [ext_resource path="res://assets/user interface/Font/NineTsukiRegular.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 27.5, 25.5 )
+extents = Vector2( 25, 26 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 31.5, 5.625 )
+extents = Vector2( 28, 4.75 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 25
@@ -124,6 +124,9 @@ tracks/2/keys = {
 } ]
 }
 
+[sub_resource type="Animation" id=14]
+length = 0.001
+
 [sub_resource type="Animation" id=5]
 resource_name = "points_fade"
 length = 0.1
@@ -182,6 +185,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( -20, -11.5 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=7]
 resource_name = "fade_out2"
@@ -213,7 +228,7 @@ tracks/1/keys = {
 } ]
 }
 
-[node name="Enemy2" type="KinematicBody2D"]
+[node name="Enemy5" type="KinematicBody2D"]
 collision_layer = 2
 collision_mask = 9
 script = ExtResource( 1 )
@@ -223,12 +238,12 @@ scale = Vector2( 0.116504, 0.116504 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.5, 3.5 )
+position = Vector2( 0, 4 )
 shape = SubResource( 1 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
 pause_mode = 1
-rect = Rect2( -30, 30, 60, -60 )
+rect = Rect2( -25, 30, 50, -60 )
 process_parent = true
 physics_process_parent = true
 
@@ -238,7 +253,7 @@ position = Vector2( 0, -22 )
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetector"]
-position = Vector2( 0.5, -5.375 )
+position = Vector2( 0, -4.25 )
 shape = SubResource( 2 )
 
 [node name="Label" type="Label" parent="."]
@@ -264,6 +279,7 @@ anims/fade_out = SubResource( 10 )
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 autoplay = "points_fade"
+anims/RESET = SubResource( 14 )
 anims/points_fade = SubResource( 5 )
 anims/points_up = SubResource( 6 )
 

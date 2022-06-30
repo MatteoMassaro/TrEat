@@ -1,6 +1,6 @@
 extends Actor
 
-export var stomp_impulse: = 1000.0
+export var stomp_impulse: = 800.0
 onready var _animated_sprite = $AnimatedSprite
 onready var sound_player = $FootSound
 
