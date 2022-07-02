@@ -9,7 +9,7 @@
 [ext_resource path="res://src/UserInterface/MenuButton.gd" type="Script" id=7]
 [ext_resource path="res://assets/user interface/PNG/star.png" type="Texture" id=8]
 [ext_resource path="res://assets/user interface/PNG/star_empty.png" type="Texture" id=9]
-[ext_resource path="res://assets/templates/Base pack/bg_menu.png" type="Texture" id=10]
+[ext_resource path="res://assets/templates/Base pack/bg_end_screen.png" type="Texture" id=10]
 [ext_resource path="res://src/UserInterface/RetryButton.gd" type="Script" id=11]
 
 [sub_resource type="DynamicFont" id=4]
@@ -110,6 +110,18 @@ tracks/6/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/7/type = "value"
+tracks/7/path = NodePath("Star1:rect_position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 425, 245 ) ]
+}
 
 [sub_resource type="Animation" id=7]
 resource_name = "star1_show"
@@ -137,6 +149,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Star1:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 425, 245 ) ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -225,6 +249,18 @@ tracks/6/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/7/type = "value"
+tracks/7/path = NodePath("Star2:rect_position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 500, 245 ) ]
+}
 
 [sub_resource type="Animation" id=9]
 resource_name = "star2_show"
@@ -252,6 +288,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Star2:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 500, 245 ) ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -340,6 +388,18 @@ tracks/6/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/7/type = "value"
+tracks/7/path = NodePath("Star3:rect_position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 575, 245 ) ]
+}
 
 [sub_resource type="Animation" id=11]
 resource_name = "star3_show"
@@ -366,6 +426,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Star3:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 575, 245 ) ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -797,10 +869,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -87.0
-margin_top = -55.0
-margin_right = -41.0
-margin_bottom = -9.0
+margin_left = 425.0
+margin_top = 245.0
+margin_right = 471.0
+margin_bottom = 291.0
 texture = ExtResource( 8 )
 expand = true
 
@@ -823,10 +895,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -12.0
-margin_top = -55.0
-margin_right = 34.0
-margin_bottom = -9.0
+margin_left = 500.0
+margin_top = 245.0
+margin_right = 546.0
+margin_bottom = 291.0
 texture = ExtResource( 8 )
 expand = true
 
@@ -849,10 +921,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 63.0
-margin_top = -55.0
-margin_right = 109.0
-margin_bottom = -9.0
+margin_left = 575.0
+margin_top = 245.0
+margin_right = 621.0
+margin_bottom = 291.0
 texture = ExtResource( 8 )
 expand = true
 

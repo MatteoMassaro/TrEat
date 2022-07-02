@@ -1322,18 +1322,19 @@ position = Vector2( 25055, 522 )
 
 [node name="Signal" parent="." instance=ExtResource( 31 )]
 position = Vector2( 701, 520 )
+dialogPath = "res://assets/user interface/Dialogs/Dialog9.json"
 
 [node name="Signal2" parent="." instance=ExtResource( 31 )]
 position = Vector2( 1615, 520 )
-dialogPath = "res://assets/user interface/Dialogs/Dialog2.json"
+dialogPath = "res://assets/user interface/Dialogs/Dialog10.json"
 
 [node name="Signal3" parent="." instance=ExtResource( 31 )]
 position = Vector2( 8221, 520 )
-dialogPath = "res://assets/user interface/Dialogs/Dialog3.json"
+dialogPath = "res://assets/user interface/Dialogs/Dialog11.json"
 
 [node name="Signal4" parent="." instance=ExtResource( 31 )]
 position = Vector2( 15460, 520 )
-dialogPath = "res://assets/user interface/Dialogs/Dialog4.json"
+dialogPath = "res://assets/user interface/Dialogs/Dialog12.json"
 
 [node name="Enemy7" parent="." instance=ExtResource( 6 )]
 position = Vector2( 2743, 537 )

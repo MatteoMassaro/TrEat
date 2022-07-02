@@ -1,11 +1,11 @@
 [gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/Actors/Enemies.gd" type="Script" id=1]
-[ext_resource path="res://assets/food/dairy.png" type="Texture" id=2]
+[ext_resource path="res://assets/food/salt.png" type="Texture" id=2]
 [ext_resource path="res://assets/user interface/Font/NineTsukiRegular.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 27, 25 )
+extents = Vector2( 27, 23 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 30, 4.75 )
@@ -243,13 +243,13 @@ shape = SubResource( 1 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
 pause_mode = 1
-rect = Rect2( -28, 28, 56, -55 )
+rect = Rect2( -30, 26, 60, -52 )
 process_parent = true
 physics_process_parent = true
 
 [node name="StompDetector" type="Area2D" parent="."]
 modulate = Color( 0, 0.203922, 1, 1 )
-position = Vector2( 0, -22 )
+position = Vector2( 0, -20 )
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetector"]

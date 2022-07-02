@@ -1,6 +1,7 @@
 [
 	{"Text":"Ciao, benvenuto in questo livello!"},
 	{"Text":"Qui scoprirai tante informazioni riguardo il diabete, una malattia cronica caratterizzata da un'eccessiva quantita' di glucosio, comunemente chiamato zucchero, nel sangue."},
-	{"Text":"Il diabete scaturisce da un'insufficiente produzione di insulina, un ormone che regola il livello di glucosio nel sangue."},
+	{"Text":"Il diabete scaturisce da un'insufficiente produzione di insulina, un ormone che regola la glicemia, ovvero il livello di glucosio nel sangue."},
+	{"Text":"Ogni alimento ha un indice glicemico diverso. L'indice glicemico indica la capacita' dei carboidrati contenuti in un alimento di innalzare il livello di glicemia. Per questo e' importante selezionare alimenti che hanno un basso indice glicemico."},
 	{"Text":"Prosegui nel livello per scoprire gli alimenti da assumere e quelli da evitare per poter prevenire o curare questo tipo di malattia."}
 ]
