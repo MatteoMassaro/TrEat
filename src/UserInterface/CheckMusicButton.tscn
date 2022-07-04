@@ -1,10 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/Screens/CheckMusic.gd" type="Script" id=1]
+[ext_resource path="res://assets/user interface/Font/FantasticParty.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 2 )
 
 [node name="CheckMusicButton" type="CheckButton"]
 margin_right = 105.324
 margin_bottom = 60.251
+custom_fonts/font = SubResource( 1 )
 pressed = true
 text = "MUSICA"
 align = 1
