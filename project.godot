@@ -63,6 +63,7 @@ RestHandler="*res://addons/github-integration/scenes/RestHandler.tscn"
 
 window/size/fullscreen=true
 mouse_cursor/custom_image="res://cursor.png"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 
