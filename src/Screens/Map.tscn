@@ -1355,6 +1355,10 @@ corner_radius_bottom_left = 2
 
 [node name="Map" type="Node2D"]
 script = ExtResource( 94 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 90

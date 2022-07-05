@@ -46,6 +46,8 @@ _global_script_class_icons={
 
 config/name="TrEat"
 run/main_scene="res://src/Screens/MainScreen.tscn"
+config/icon="res://TrEatLogo.png"
+config/macos_native_icon="res://TrEatLogo.icns"
 config/windows_native_icon="res://TrEatLogo.ico"
 
 [autoload]

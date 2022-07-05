@@ -26,6 +26,9 @@ onready var Star1Level4Empty: TextureRect = get_node("CanvasLayer/Star1Level4Emp
 onready var Star2Level4Empty: TextureRect = get_node("CanvasLayer/Star2Level4Empty")
 onready var Star3Level4Empty: TextureRect = get_node("CanvasLayer/Star3Level4Empty")
 
+onready var Tilemap1: TileMap = get_node("CanvasLayer/TileMap")
+onready var Tilemap2: TileMap = get_node("CanvasLayer/TileMap2")
+
 
 func _ready():
 	TrackPlayer.music_track = load ("res://assets/user interface/Music/ES_Glimmer - AGST.mp3")
