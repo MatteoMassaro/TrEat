@@ -17,6 +17,7 @@ onready var star3_empty: TextureRect = get_node("Star3Empty")
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	TrackPlayer.stop_steps()
 	score.text = score.text % [PlayerData.score]
 	if HealthBar.enemy_counter < 3:
 		game_over_title.visible = false

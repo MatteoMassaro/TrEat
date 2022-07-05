@@ -43,9 +43,14 @@ func _process(_delta):
 
 func _physics_process(delta):
 	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0
-	var direction: = get_direction()
-	_velocity = calculate_and_move_velocity(_velocity, direction, speedPlayer, is_jump_interrupted)
-	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
+	if PlayerData.player_entered_portal == false:
+		var direction: = get_direction()
+		_velocity = calculate_and_move_velocity(_velocity, direction, speedPlayer, is_jump_interrupted)
+		_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
+	else:
+		TrackPlayer.stop_steps()
+		_animated_sprite.stop()
+		_animated_sprite.frame = 0
 
 
 func get_direction() -> Vector2:
