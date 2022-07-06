@@ -62,7 +62,7 @@ anchor_bottom = 1.0
 margin_left = 10.0
 margin_top = 10.0
 margin_right = -9.0
-margin_bottom = -31.0
+margin_bottom = -24.0
 theme = ExtResource( 3 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 2 )
@@ -70,14 +70,31 @@ bbcode_enabled = true
 bbcode_text = "  "
 text = "  "
 
+[node name="PreviousDialog" type="RichTextLabel" parent="Dialog"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -290.0
+margin_top = -19.0
+margin_right = -60.0
+margin_bottom = 3.0
+theme = ExtResource( 3 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "PREMI CANCELLA PER TORNARE INDIETRO"
+text = "PREMI CANCELLA PER TORNARE INDIETRO"
+
 [node name="NextDialog" type="RichTextLabel" parent="Dialog"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -103.5
-margin_top = -22.0
-margin_right = 103.5
+margin_left = 74.0
+margin_top = -19.0
+margin_right = 260.0
+margin_bottom = 3.0
 theme = ExtResource( 3 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 custom_fonts/normal_font = SubResource( 3 )

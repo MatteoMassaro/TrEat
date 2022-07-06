@@ -4,6 +4,7 @@ onready var scene_tree: = get_tree()
 onready var timer: Timer = get_node("Timer")
 onready var dialog_rect: TextEdit = get_node("Dialog")
 onready var text: RichTextLabel = get_node("Dialog/Text")
+onready var press_backspace: RichTextLabel = get_node("Dialog/PreviousDialog")
 onready var press_space: RichTextLabel = get_node("Dialog/NextDialog")
 
 export var dialogPath = ""
@@ -16,6 +17,9 @@ var no_more_text = false
 
 
 func _process(delta):
+	press_backspace.visible = false
+	if phraseNum > 1:
+		press_backspace.visible = finished
 	press_space.visible = finished
 	if Input.is_action_just_pressed("ui_accept"):
 		if finished:
@@ -25,6 +29,13 @@ func _process(delta):
 				TrackPlayer.play_effect()
 		else:
 			text.visible_characters = len(text.text)
+	elif Input.is_action_just_pressed("ui_cancel"):
+		if finished && phraseNum > 1:
+			phraseNum -= 2
+			nextPhrase()
+			if no_more_text == false && TrackPlayer.flagEffects == 0:
+					TrackPlayer.effect_track = load("res://assets/user interface/kenney_interfacesounds/Audio/ES_Keyboard Typing 34 - SFX Producer.mp3")
+					TrackPlayer.play_effect()
 
 
 func getDialog():
